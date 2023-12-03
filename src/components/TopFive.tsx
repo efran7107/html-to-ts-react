@@ -7,14 +7,21 @@ type Character = {
   nickName: null | string;
 };
 
-type arrProps = {
-  characters: Character[];
+type charProps = {
+  character: Character;
+  index: number;
 };
 
-function compNums(a: number, b: number) {
-  return a + b;
-}
+export const TopFive = ({ character, index }: charProps) => {
+  const shade = (index + 1) % 2 === 0 ? "light" : "dark";
 
-export const TopFive = ({ characters }: arrProps) => {
-  return <tbody></tbody>;
+  return (
+    <>
+      <tr className={shade}>
+        <td>{character.name}</td>
+        <td>{character.skillset}</td>
+        <td>{character.votes}</td>
+      </tr>
+    </>
+  );
 };
