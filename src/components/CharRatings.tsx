@@ -1,4 +1,5 @@
 import { TopFive } from "./TopFive";
+import "../css/CharRatings.css";
 
 type Character = {
   name: string;
